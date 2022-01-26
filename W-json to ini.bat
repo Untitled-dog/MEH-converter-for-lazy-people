@@ -1,0 +1,1 @@
+python "converter.py" jsontoini %1
