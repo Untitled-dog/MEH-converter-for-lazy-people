@@ -100,13 +100,17 @@ if mode == 'jsontoini':
 if mode == 'initojson':
     b=file.split('\n')
     fn=fn[:-3]+'json'
+    inp=configparser.ConfigParser()
+    inp.read(fn)
     out={}
     md=''
     hold=''
+    print(inp)
     def mklayer(dira):
         import sys
-        print(dira.split('/'))
-        sys.exit()
+        for i in dira.split('/'):
+            out[i]={}
+        #sys.exit(1)
     for i in b:
         if i == '':continue
         elif i.startswith('[') and i.endswith(']'): 
